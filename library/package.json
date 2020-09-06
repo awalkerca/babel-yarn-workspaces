@@ -1,0 +1,33 @@
+{
+  "name": "@test/library",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+
+  },
+  "scripts": {
+    "build": "webpack --mode production --config webpack.babel.js && babel ./src/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files"
+  }
+}
