@@ -27,12 +27,22 @@ function config () {
             rules: [
                 {
                     test: /\.(jsx|js)?$/,
-                    //include: [path.join(__dirname, 'app')],
                     exclude: /node_modules/,
-                    loader: 'babel-loader',
-                    options: {
-                        rootMode: "upward"
-                    }
+                    loader: 'babel-loader'
+                },
+                {
+                    test: /\.(scss|sass)?$/,
+                    use: [
+                        {
+                            loader: 'style-loader' // creates style nodes from JS strings
+                        },
+                        {
+                            loader: 'css-loader' // translates CSS into CommonJS
+                        },
+                        {
+                            loader: 'sass-loader' // compiles Sass to CSS
+                        }
+                    ]
                 }
             ]
         },

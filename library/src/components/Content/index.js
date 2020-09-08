@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './content.scss';
 
 export function Content ({ text }) {
     return (
-        <p>
+        <p className="content">
             {text}
         </p>
     )
